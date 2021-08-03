@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { RegistroComponent } from './pages/registro/registro.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+// import {MatToolbarModule} from '@angular/material/toolbar';
 
 const routes: Routes = [
     { path: '', redirectTo:'inicio', pathMatch: 'full' },

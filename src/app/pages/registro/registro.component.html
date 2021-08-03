@@ -1,17 +1,21 @@
 <h2>registro</h2>
 
+<!-- <form [FormGroup]='registerForm'> -->
 <form>
     <div>
-        <label for='nombre'> Nombre de Usuario </label>
-        <input id='nombre' type='text' [formControl] = 'nombre'/>
+        <label for='username'> Nombre de Usuario </label>
+        <br />
+        <input id='username' type='text' [formControl] = 'username'/>
     </div>
     <div>
-        <label for='Contraseña'> Contraseña </label>
-        <input id='Contraseña' type='password' [formControl] = 'contrasena'/>
+        <label for='password'> Contraseña </label>
+        <br />
+        <input id='password' type='password' [formControl] = 'password'/>
     </div>
     <div>
-        <label for='Confirmar Contraseña'> Confirmar Contraseña </label>
-        <input id='Confirmar Contraseña' type='password'/>
+        <label for='ConfirmPassword'> Confirmar Contraseña </label>
+        <br />
+        <input id='ConfirmPassword' type='password' [formControl] = 'password'/>
     </div>
     <button>Cargar</button>
 

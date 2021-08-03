@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormControl } from '@angular/forms';
 // import { FormControl } from '@angular/forms';
 
 
@@ -8,4 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+    // username = new FormControl('lola');
 }

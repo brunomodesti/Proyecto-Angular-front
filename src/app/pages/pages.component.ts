@@ -6,7 +6,7 @@ import {FormControl} from '@angular/forms';
   styleUrls: ['./pages.component.scss']
 })
 export class PagesComponent implements OnInit {
-  Nombre = new FormControl('bruno');
+  // Nombre = new FormControl('bruno');
   constructor() { }
 
   ngOnInit(): void {
