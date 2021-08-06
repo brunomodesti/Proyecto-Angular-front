@@ -1,0 +1,5 @@
+[
+    {"name":"Argentina", "cities":["cordoba", "tucuman", "misiones", "catamarca", "neuquen"]},
+    {"name":"brasil", "cities": ["brazilia", "sao pablo", "salvador", "Florianopolis"]},
+    {"name":"EEUU", "cities": ["new york", "texas", "los angeles", "miame"]}
+]

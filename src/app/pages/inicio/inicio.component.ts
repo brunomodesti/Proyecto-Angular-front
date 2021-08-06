@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -6,10 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inicio.component.scss']
 })
 export class InicioComponent implements OnInit {
+    username = new FormControl('juan');
+    password = new FormControl('');
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  irARegistro(): void {
+    this.router.navigate(['/registro'])
+  }
+  irAMensaje(): void {
+    this.router.navigate(['/mensajes'])
+  
   }
 
 }

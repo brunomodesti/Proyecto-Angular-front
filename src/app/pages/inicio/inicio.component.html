@@ -1,1 +1,15 @@
 <p>inicio works!</p>
+<form>
+    <div>
+        <label for='username'> Nombre de Usuario </label>
+        <br />
+        <input id='username' type='text' [formControl] = 'username'/>
+    </div>
+    <div>
+        <label for='password'> Contraseña </label>
+        <br />
+        <input id='password' type='password' [formControl] = 'password'/>
+    </div>
+<form>
+    <button (click)="irAMensaje()">Iniciar sesion</button>
+    <button (click)="irARegistro()">registrarse</button>

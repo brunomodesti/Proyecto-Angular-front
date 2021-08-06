@@ -10,9 +10,7 @@ import { MensajesComponent } from './pages/mensajes/mensajes.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingsModule } from './app-routing-module';
 import { ReactiveFormsModule } from '@angular/forms'
-// import {MatToolbarModule} from '@angular/material/toolbar';
-// import {MatMenuModule} from '@angular/material/menu';
-// import { MaterialModule } from './material.module';
+
 
 
 
@@ -30,9 +28,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     SharedModule,
     AppRoutingsModule,
     ReactiveFormsModule,
-    // MatToolbarModule,
-    // MatMenuModule,
-    // MaterialModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

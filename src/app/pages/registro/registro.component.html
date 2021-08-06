@@ -1,22 +1,47 @@
 <h2>registro</h2>
 
 <!-- <form [FormGroup]='registerForm'> -->
-<form>
+<form [formGroup]='registerForm'>
+    <div>
+        <label for='lastname'> Apellido </label>
+        <br />
+        <input id='lastname' type='text' formControlName = 'lastname'/>
+    </div>
+    <div>
+        <label for='name'> Nombres </label>
+        <br />
+        <input id='name' type='text' formControlName = 'name'/>
+    </div>
     <div>
         <label for='username'> Nombre de Usuario </label>
         <br />
-        <input id='username' type='text' [formControl] = 'username'/>
+        <input id='username' type='text' formControlName = 'username'/>
     </div>
     <div>
         <label for='password'> Contraseña </label>
         <br />
-        <input id='password' type='password' [formControl] = 'password'/>
+        <input id='password' type='password' formControlName = 'password'/>
     </div>
     <div>
         <label for='ConfirmPassword'> Confirmar Contraseña </label>
         <br />
-        <input id='ConfirmPassword' type='password' [formControl] = 'password'/>
+        <input id='ConfirmPassword' type='password' formControlName = 'password'/>
     </div>
-    <button>Cargar</button>
+    <div formGroupName='locationForm'>
+        <div>
+            <label for='country'> Pais </label>
+            <br />
+            <select id='country' formControlName = 'country' (change)="changeCountry($event)">
+                <option *ngFor="let country of countries">{{country.name}}</option>
+                </select>
+        </div>
+        <div>
+            <label for='city'> Ciudad </label>
+            <br />
+            <input id='city' type='select' formControlName = 'city'/>
+        </div>
+    </div>
+    <br />
+    <button (click)="registrarUsuario()">Guardar</button>
 
 </form>
