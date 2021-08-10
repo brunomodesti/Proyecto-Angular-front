@@ -1,5 +1,8 @@
 [
-    {"name":"Argentina", "cities":["cordoba", "tucuman", "misiones", "catamarca", "neuquen"]},
-    {"name":"brasil", "cities": ["brazilia", "sao pablo", "salvador", "Florianopolis"]},
-    {"name":"EEUU", "cities": ["new york", "texas", "los angeles", "miame"]}
+    {"name":"Argentina", "cities":["Buenos Aires","Catamarca","Chaco","Chubut","Córdoba","Corrientes","Entre Ríos","Formosa","Jujuy","La Pampa","La Rioja","Mendoza","Misiones","Neuquén","Río Negro","Salta","San Juan","San Luis","Santa Cruz","Santa Fe","Santiago del Estero","Tierra del Fuego","Antártida e Isla del Atlántico Sur","Tucumán"]},
+    {"name":"Brasil", "cities": ["Acre","Alagoas","Amapa","Amazonas","Bahía","Ceara","Distrito Federal","Espirito Santo","Goias","Maranhao","Mato Grosso","Mato Grosso do Sul","Minas Gerais","Para","Paraiba","Paraná","Pernambuco","Piaui","Río de Janeiro","Río Grande do Norte","Río Grande do Sul","Rondonia","Roraima","Santa Catarina","Sao Paulo","Sergipe","Tocantins"]},
+    {"name":"Chile", "cities": ["Aisen del General Carlos Ibañez del Campo","Antofagasta","Araucania","Atacama","Bio-Bio","Coquimbo","Libertador General Bernardo O'Higgins","Los Lagos","Magallanes y de la Antártica Chilena","Maule","Santiago","Tarapaca","Valparaiso"]},
+    {"name":"Paraguay", "cities": ["Alto Paraguay","Alto Paraná","Amambay","Asunción","Boquerón","Caaguazú","Caazapa","Canindeyu","Central","Concepción","Cordillera","Guaira","Itapua","Misiones","Neembucu","Paraguarí","Presidente Hayes","San Pedro"]},
+    {"name":"Uruguay", "cities": ["Artigas","Canelones","Cerro Largo","Colonia","Durazno","Flores","Florida","Lavalleja","Maldonado","Montevideo","Paysandu","Río Negro","Rivera","Rocha","Salto","San José","Soriano","Tacuarembo","Treinta y Tres"]}
+
 ]

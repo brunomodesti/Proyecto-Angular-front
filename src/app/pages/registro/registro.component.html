@@ -42,6 +42,6 @@
         </div>
     </div>
     <br />
-    <button (click)="registrarUsuario()">Guardar</button>
+    <button (click)="registrarUsuario()"[disabled]="registerForm.invalid">Guardar</button>
 
 </form>

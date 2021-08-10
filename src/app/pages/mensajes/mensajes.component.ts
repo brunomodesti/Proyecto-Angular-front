@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mensajes.component.scss']
 })
 export class MensajesComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
