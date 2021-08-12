@@ -3,11 +3,18 @@ import { FormControl, FormGroup} from '@angular/forms';
 import { Router } from '@angular/router';
 import paises from '../../paises.json';
 
+export interface Pais {
+  name: string;
+  cities: string[];
+}
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
   styleUrls: ['./registro.component.scss']
 })
+
+
 
 export class RegistroComponent implements OnInit {
 
@@ -23,7 +30,10 @@ export class RegistroComponent implements OnInit {
     })
   });
 
-  countries: any = paises;
+  countries: Pais[] = paises;
+  cities: any = [];
+  selectedCountry: string = "";
+  selectedCity: string = "";
 
   constructor(
     private router: Router
@@ -39,9 +49,15 @@ export class RegistroComponent implements OnInit {
   }
 
   changeCountry(e): void {
-    console.log(this.registerForm.get("locationForm")!.get("country")!.value);
+    console.log(this.selectedCountry);
+    this.countries.forEach((country) => {
+      if (country.name === this.selectedCountry) {
+        this.cities = country.cities
+      }
+    })
   }
 }
+
 
 
 

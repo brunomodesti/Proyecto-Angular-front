@@ -1,47 +1,49 @@
-<h2>registro</h2>
+<h2 class="title-register">Registro</h2>
 
-<!-- <form [FormGroup]='registerForm'> -->
-<form [formGroup]='registerForm'>
-    <div>
-        <label for='lastname'> Apellido </label>
-        <br />
-        <input id='lastname' type='text' formControlName = 'lastname'/>
-    </div>
-    <div>
-        <label for='name'> Nombres </label>
-        <br />
-        <input id='name' type='text' formControlName = 'name'/>
-    </div>
-    <div>
-        <label for='username'> Nombre de Usuario </label>
-        <br />
-        <input id='username' type='text' formControlName = 'username'/>
-    </div>
-    <div>
-        <label for='password'> Contraseña </label>
-        <br />
-        <input id='password' type='password' formControlName = 'password'/>
-    </div>
-    <div>
-        <label for='ConfirmPassword'> Confirmar Contraseña </label>
-        <br />
-        <input id='ConfirmPassword' type='password' formControlName = 'password'/>
-    </div>
+<form class= "form-container"[formGroup]='registerForm'>
+    <mat-form-field >
+        <mat-label for='lastname'> Apellido </mat-label>
+        <input matInput id='lastname' type='text' formControlName = 'lastname'>
+    </mat-form-field>
+    <br />
+    <mat-form-field >
+        <mat-label for='name'> Nombres </mat-label>
+        <input matInput id='name' type='text' formControlName = 'name'>
+    </mat-form-field>
+    <br />
+    <mat-form-field >
+        <mat-label for='username'> Nombre de Usuario </mat-label>
+        <input matInput id='username' type='text' formControlName = 'username'>
+    </mat-form-field>
+    <br />
+    <mat-form-field >
+        <mat-label for='password'> Contraseña </mat-label>
+        <input matInput id='password' type='password' formControlName = 'password'>
+    </mat-form-field>
+    <br />
+    <mat-form-field >
+        <mat-label for='ConfirmPassword'> Confirmar Contraseña </mat-label>
+        <input matInput id='ConfirmPassword' type='password' formControlName = 'password'>
+    </mat-form-field>
+    <br />
     <div formGroupName='locationForm'>
         <div>
-            <label for='country'> Pais </label>
-            <br />
-            <select id='country' formControlName = 'country' (change)="changeCountry($event)">
-                <option *ngFor="let country of countries">{{country.name}}</option>
-                </select>
+            <mat-form-field appearance="fill">
+                <mat-label>Pais</mat-label>
+                <mat-select id='country' formControlName = 'country' (selectionChange)="changeCountry(countries)" [(ngModel)]="selectedCountry">
+                  <mat-option *ngFor="let country of countries" [value]="country.name">{{country.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
         <div>
-            <label for='city'> Ciudad </label>
-            <br />
-            <input id='city' type='select' formControlName = 'city'/>
+            <mat-form-field appearance="fill">
+                <mat-label>Ciudad</mat-label>
+                <mat-select id='city' formControlName='city' [(ngModel)]="selectedCity">
+                  <mat-option *ngFor="let city of cities" [value]="city">{{city}}</mat-option>
+                </mat-select>
+            </mat-form-field>
         </div>
     </div>
-    <br />
-    <button (click)="registrarUsuario()"[disabled]="registerForm.invalid">Guardar</button>
+    <button mat-stroked-button color="primary" (click)="registrarUsuario()"[disabled]="registerForm.invalid">Guardar</button>
 
 </form>

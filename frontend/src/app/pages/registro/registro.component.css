@@ -1,2 +1,11 @@
+.title-register {
+  text-align: center;
+  font: times "Times New Roman";
+  padding: auto;
+  font-weight: 300;
+  margin: 16;
+}
 
-/*# sourceMappingURL=registro.component.css.map */
+.form-container {
+  text-align: center;
+}
