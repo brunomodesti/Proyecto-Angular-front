@@ -1,2 +1,8 @@
+body {
+  position: relative;
+  min-height: 100vh;
+}
 
-/*# sourceMappingURL=app.component.css.map */
+#content-wrap {
+  padding-bottom: 30px;
+}
