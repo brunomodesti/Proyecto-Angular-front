@@ -1,8 +1,9 @@
-<mat-list role="list">
-  <mat-list-item role="listitem">Mensajes Enviados</mat-list-item>
-  <mat-list-item role="listitem">Mensajes Recibidos</mat-list-item>
-</mat-list>
 
+  <div class="options-list">
+    <button mat-button color="primary">Mensajes Enviados</button>
+    <br />
+    <button mat-button color="primary">Mensajes Recibidos</button>
+  </div>
 
 
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -25,3 +26,7 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<div class="option-close">
+  <button mat-button color="primary">Cerrar Sesion</button>
+</div>

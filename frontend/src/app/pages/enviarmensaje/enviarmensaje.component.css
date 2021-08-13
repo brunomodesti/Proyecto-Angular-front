@@ -1,2 +1,15 @@
+.enviarmensaje-container {
+  font: times "Times New Roman";
+  text-align: center;
+  padding: auto;
+  font-weight: 3000;
+  margin: 16;
+}
 
-/*# sourceMappingURL=enviarmensaje.component.css.map */
+.enviarmensaje {
+  text-align: center;
+}
+
+.send {
+  text-align: center;
+}

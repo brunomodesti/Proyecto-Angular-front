@@ -5,12 +5,13 @@ import { InicioComponent } from './inicio/inicio.component';
 import { RegistroComponent } from './registro/registro.component';
 import { MensajesComponent } from './mensajes/mensajes.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EnviarmensajeComponent } from './enviarmensaje/enviarmensaje.component';
 
 
 @NgModule({
     declarations:
-    [InicioComponent, RegistroComponent, MensajesComponent],
+    [InicioComponent, RegistroComponent, MensajesComponent, EnviarmensajeComponent],
     imports: [CommonModule, MaterialModule, FormsModule, ReactiveFormsModule],
-    exports: [InicioComponent, RegistroComponent, MensajesComponent],
+    exports: [InicioComponent, RegistroComponent, MensajesComponent, EnviarmensajeComponent],
 })
 export class PagesModule { };

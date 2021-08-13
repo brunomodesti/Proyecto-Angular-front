@@ -15,11 +15,4 @@ export class EnviarmensajeComponent implements OnInit {
 
     ngOnInit(): void {}
 
-    irARegistro(): void {
-        this.router.navigate(['/registro'])
-    }
-    irAMensaje(): void {
-        this.router.navigate(['/mensajes'])
-    }
-
 }

@@ -13,3 +13,13 @@ table {
 .mat-column-mensaje {
   width: 60%;
 }
+
+.option-close {
+  text-align: right;
+  position: absolute;
+  width: 83%;
+  margin-right: 20px;
+  font-size: 12px;
+  height: 600px;
+  overflow: auto;
+}
