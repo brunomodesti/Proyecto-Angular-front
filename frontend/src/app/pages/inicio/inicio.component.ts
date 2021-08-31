@@ -28,9 +28,13 @@ export class InicioComponent implements OnInit {
   }
 
   iniciarSesion(): void {
-    this.usuarioService.get().subscribe(
+    var data = {
+      username: this.username.value,
+      password: this.password.value
+    }
+    this.usuarioService.post(data).subscribe(
       response => {
-        console.log(response.message);
+        console.log(response);
       },
       error => {
         console.log(error);

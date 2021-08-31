@@ -3,27 +3,27 @@
 <form class= "form-container"[formGroup]='registerForm'>
     <mat-form-field >
         <mat-label for='lastname'> Apellido </mat-label>
-        <input matInput id='lastname' type='text' formControlName = 'lastname'>
+        <input required id='lastname' matInput id='lastname' type='text' formControlName = 'lastname'>
     </mat-form-field>
     <br />
     <mat-form-field >
         <mat-label for='name'> Nombres </mat-label>
-        <input matInput id='name' type='text' formControlName = 'name'>
+        <input  required id='name' matInput id='name' type='text' formControlName = 'name'>
     </mat-form-field>
     <br />
     <mat-form-field >
         <mat-label for='username'> Nombre de Usuario </mat-label>
-        <input matInput id='username' type='text' formControlName = 'username'>
+        <input  required id='username' matInput id='username' type='text' formControlName = 'username'>
     </mat-form-field>
     <br />
     <mat-form-field >
         <mat-label for='password'> Contraseña </mat-label>
-        <input matInput id='password' type='password' formControlName = 'password'>
+        <input  required id='password' matInput id='password' type='password' formControlName = 'password'>
     </mat-form-field>
     <br />
     <mat-form-field >
         <mat-label for='ConfirmPassword'> Confirmar Contraseña </mat-label>
-        <input matInput id='ConfirmPassword' type='password' formControlName = 'password'>
+        <input  required id='   ConfirmPassword' matInput id='ConfirmPassword' type='password' formControlName = 'password'>
     </mat-form-field>
     <br />
     <div formGroupName='locationForm'>

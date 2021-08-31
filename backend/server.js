@@ -4,7 +4,7 @@ const cors = require("cors");
 const app = express();
 
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:4200"
 };
 
 app.use(cors(corsOptions));
@@ -24,4 +24,9 @@ app.get("/", (req, res) => {
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
+});
+
+app.post("/login", (req, res) => {
+  console.log(req);
+  res.json({ usuario: req.body.username });
 });
