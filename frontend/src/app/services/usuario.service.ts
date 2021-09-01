@@ -16,8 +16,8 @@ export class UsuarioService {
   }
 
   
-  post(data: any): Observable<any> {
-    return this.http.post(`${baseUrl}/login`, data);
+  login(data: any): Observable<any> {
+    return this.http.post(`${baseUrl}/api/usuario/login`, data);
   }
 
   register(data: any): Observable<any> {

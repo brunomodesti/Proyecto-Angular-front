@@ -29,15 +29,14 @@ export class InicioComponent implements OnInit {
 
   iniciarSesion(): void {
     var data = {
-      username: this.username.value,
-      password: this.password.value
+      usuario: this.username.value,
+      password: this.password.value,
     }
-    this.usuarioService.post(data).subscribe(
+    this.usuarioService.login(data).subscribe(
       response => {
-        console.log(response);
-      },
-      error => {
-        console.log(error);
+        if (response === true) {
+          this.irAMensaje();
+        }
       }
     )
   }

@@ -23,3 +23,22 @@ exports.create = (req, res) => {
             });
         });
 };
+
+exports.login = async (req, res) => {
+    const usuarioDb = await Usuario.findOne({
+        where: {
+            [Op.and]: [
+                { usuario: req.body.usuario },
+                { password: req.body.password }
+            ]
+        }
+    });
+    
+    if (usuarioDb === null) {
+        res.status(404).send('Not found!');
+    } else {
+        console.log(usuarioDb);
+        res.send(true);
+    }
+} 
+
