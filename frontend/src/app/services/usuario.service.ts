@@ -23,4 +23,8 @@ export class UsuarioService {
   register(data: any): Observable<any> {
     return this.http.post(`${baseUrl}/api/usuario/registrar`, data);
   }
+
+  buscarUsuarios(): Observable<any> {
+    return this.http.get(`${baseUrl}/api/usuario/buscarUsuarios`)
+  }
 }

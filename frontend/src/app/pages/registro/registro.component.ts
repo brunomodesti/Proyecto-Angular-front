@@ -54,8 +54,7 @@ export class RegistroComponent implements OnInit {
       pais: this.selectedCountry,
       ciudad:this.selectedCity,
     }
-   /*  console.log (this.registerForm);
-    this.router.navigate(['/inicio']) */
+
     this.usuarioService.register(data).subscribe(
       response => {
         console.log(response);

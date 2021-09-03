@@ -42,3 +42,10 @@ exports.login = async (req, res) => {
     }
 } 
 
+
+exports.todosUsuarios = async (req, res) => {
+    const usuariosDb = await Usuario.findAll({
+        attributes: ["usuario"]
+    });
+    res.send(usuariosDb);
+}

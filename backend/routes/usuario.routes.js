@@ -6,7 +6,10 @@ module.exports = app => {
     router.post("/registrar", usuarios.create);
   
     router.post("/login", usuarios.login);
-/*
+
+    router.get("/buscarUsuarios", usuarios.todosUsuarios);
+    
+    /*
     // Retrieve all published Tutorials
     router.get("/published", tutorials.findAllPublished);
   
