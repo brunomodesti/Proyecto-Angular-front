@@ -20,5 +20,10 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.usuarios = require("./usuario.model.js")(sequelize, Sequelize);
+db.mensajes = require("./mensaje.model.js")(sequelize, Sequelize);
+
+db.mensajes.belongsTo(db.usuarios, { as: 'remitenteUsuario', foreignKey: 'remitente_usuario', targetKey: 'usuario'});
+db.mensajes.belongsTo(db.usuarios, { as: 'destinatarioUsuario', foreignKey: 'destinatario_usuario', targetKey: 'usuario'});
 
 module.exports = db;
+
