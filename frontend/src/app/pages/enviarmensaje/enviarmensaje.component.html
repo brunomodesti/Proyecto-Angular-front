@@ -9,9 +9,9 @@
     <br/>
     <mat-form-field class="mensajeInput" >
         <mat-label>Mensaje</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput [formControl]="mensajeFormControl"></textarea>
     </mat-form-field>
     <br/>
-    <button mat-button color="primary">ENVIAR</button>
+    <button mat-button color ="primary" (click)="enviarMensaje()">ENVIAR</button>
 </form>
 

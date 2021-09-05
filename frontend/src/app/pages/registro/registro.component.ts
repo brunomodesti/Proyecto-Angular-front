@@ -45,6 +45,10 @@ export class RegistroComponent implements OnInit {
 
   }
 
+  irAInicio(): void {
+    this.router.navigate(['/inicio'])
+  }
+
   registrarUsuario(): void {
     var data = {
       nombre: this.registerForm.value.name,
@@ -57,7 +61,9 @@ export class RegistroComponent implements OnInit {
 
     this.usuarioService.register(data).subscribe(
       response => {
-        console.log(response);
+        if (response === true) {
+          this.irAInicio();
+        }
       },
       error => {
         console.log(error);

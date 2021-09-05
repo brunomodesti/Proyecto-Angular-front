@@ -35,6 +35,7 @@ export class InicioComponent implements OnInit {
     this.usuarioService.login(data).subscribe(
       response => {
         if (response === true) {
+          localStorage.setItem("farmbookUsuario", this.username.value);
           this.irAMensaje();
         }
       }

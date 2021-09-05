@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
+import { MensajeService } from 'src/app/services/mensaje.service';
 
 export interface MensajeElement {
-  destinatario: string;
+  usuario: string;
   fecha: Date;
   mensaje: string;
 }
-
-const MENSAJES_DATA: MensajeElement[] = [
-  {destinatario: 'Hydrogen', fecha: new Date(2021, 6, 15), mensaje: 'H'},
-  {destinatario: 'Helium', fecha: new Date(2021, 6, 16), mensaje: 'He'},
-  {destinatario: 'Lithium', fecha: new Date(2021, 6, 19), mensaje: 'Li'}
-];
 
 @Component({
   selector: 'app-mensajes',
@@ -18,10 +15,39 @@ const MENSAJES_DATA: MensajeElement[] = [
   styleUrls: ['./mensajes.component.scss']
 })
 export class MensajesComponent implements OnInit {
-  displayedColumns: string[] = ['destinatario', 'fecha', 'mensaje'];
-  dataSource = MENSAJES_DATA;
-  constructor() {}
+  displayedColumns: string[] = ['usuario', 'fecha', 'mensaje'];
+  mensajes = new MatTableDataSource<MensajeElement>();
 
-  ngOnInit(): void {}
+  constructor(
+    private router: Router,
+    private mensajeService: MensajeService,
+    private changeDetectorRefs: ChangeDetectorRef,
+    ) {}
+
+
+  cargarMensajesEnviados(): void {
+    this.mensajeService.getMensajesEnviados(localStorage.getItem('farmbookUsuario')).subscribe(
+      response => {
+        var mensajesTabla: MensajeElement[] = [];
+        response.forEach((mensajeEnviado) => {
+          var msj = {
+            usuario: mensajeEnviado.destinatario_usuario,
+            fecha: mensajeEnviado.createdAt,
+            mensaje: mensajeEnviado.cuerpo
+          };
+          mensajesTabla.push(msj);
+      });
+      this.mensajes.data = mensajesTabla;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+
+  }
+
+  ngOnInit(): void {
+    this.cargarMensajesEnviados();
+  }
 
 }

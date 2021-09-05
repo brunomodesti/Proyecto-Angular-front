@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
+import { MensajeService } from 'src/app/services/mensaje.service';
 import { UsuarioService } from '../../services/usuario.service';
 
 
@@ -14,11 +15,13 @@ export class EnviarmensajeComponent implements OnInit {
 
     usuarios: any = [];
     usuarioElegido: string = "";
+    mensajeFormControl: FormControl = new FormControl ("");
 
 
     constructor(
         private usuarioService: UsuarioService,
-        private router: Router
+        private router: Router,
+        private mensajeService: MensajeService,
     ) { }
 
     ngOnInit(): void {
@@ -29,6 +32,23 @@ export class EnviarmensajeComponent implements OnInit {
                 })
             }
         )
+    }
+
+    enviarMensaje(): void {
+        var data = {
+            cuerpo: this.mensajeFormControl.value,
+            remitente_usuario: localStorage.getItem ("farmbookUsuario"),
+            destinatario_usuario: this.usuarioElegido
+        }
+        this.mensajeService.enviarMensaje(data).subscribe(
+            response => {
+                console.log(response);
+            },
+            error => {
+                console.log(error);
+            }
+        )
+
     }
 
 }
