@@ -25,7 +25,21 @@ exports.getMensajesEnviados = (req, res) => {
         where: { remitente_usuario: req.params.usuario },
     })
     .then(data => {
-        console.log(data);
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(500).send({
+        message:
+            err.message || "ocurrio error"
+        });
+    });
+}
+
+exports.getMensajesRecibidos = (req, res) => {
+    Mensaje.findAll({
+        where: { destinatario_usuario: req.params.usuario },
+    })
+    .then(data => {
         res.send(data);
     })
     .catch(err => {

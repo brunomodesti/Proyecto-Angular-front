@@ -1,10 +1,10 @@
 
   <div class="options-list">
-    <button mat-button color="primary">Mensajes Nuevo</button>
+    <button mat-button color="primary" (click)="irAMensajeNuevo()">Mensajes Nuevo</button>
     <br />
-    <button mat-button color="primary">Mensajes Enviados</button>
+    <button mat-button color="primary" (click)="cargarMensajesEnviados()">Mensajes Enviados</button>
     <br />
-    <button mat-button color="primary">Mensajes Recibidos</button>
+    <button mat-button color="primary" (click)="cargarMensajesRecibidos()">Mensajes Recibidos</button>
   </div>
 
 
@@ -30,5 +30,5 @@
 </table>
 
 <div class="option-close">
-  <button mat-button color="primary">Cerrar Sesion</button>
+  <button mat-button color="primary" (click)="cerrarSesion()">Cerrar Sesion</button>
 </div>

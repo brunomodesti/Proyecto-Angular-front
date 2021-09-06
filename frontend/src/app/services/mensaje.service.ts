@@ -18,4 +18,8 @@ export class MensajeService {
     getMensajesEnviados(usuario: any): Observable<any> {
         return this.http.get(`${baseUrl}/api/mensaje/mensajesenviados/${usuario}`);
     }
+
+    getMensajesRecibidos(usuario: any): Observable<any> {
+        return this.http.get(`${baseUrl}/api/mensaje/mensajesrecibidos/${usuario}`);
+    }
 }

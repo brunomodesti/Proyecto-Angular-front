@@ -4,5 +4,8 @@ module.exports = app => {
 
     router.post("/enviarmensaje", mensaje.create);
     router.get("/mensajesenviados/:usuario", mensaje.getMensajesEnviados);
+    router.get("/mensajesrecibidos/:usuario", mensaje.getMensajesRecibidos);
+
     app.use('/api/mensaje', router);
+
 }

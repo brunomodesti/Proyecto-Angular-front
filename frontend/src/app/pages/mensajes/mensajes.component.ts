@@ -46,8 +46,39 @@ export class MensajesComponent implements OnInit {
 
   }
 
+  cargarMensajesRecibidos(): void {
+    this.mensajeService.getMensajesRecibidos(localStorage.getItem('farmbookUsuario')).subscribe(
+      response => {
+        var mensajesTabla: MensajeElement[] = [];
+        response.forEach((mensajeRecibido) => {
+          var msj = {
+            usuario: mensajeRecibido.remitente_usuario,
+            fecha: mensajeRecibido.createdAt,
+            mensaje: mensajeRecibido.cuerpo
+          };
+          mensajesTabla.push(msj);
+      });
+      this.mensajes.data = mensajesTabla;
+      },
+      error => {
+        console.log(error);
+      }
+    )
+
+  }
+
   ngOnInit(): void {
     this.cargarMensajesEnviados();
   }
 
+  irAMensajeNuevo(): void {
+    this.router.navigate(['/enviarmensaje'])
+  }
+
+  cerrarSesion(): void {
+    localStorage.removeItem("farmbookUsuario");
+    this.router.navigate(["/inicio"])
+  }
 }
+
+
